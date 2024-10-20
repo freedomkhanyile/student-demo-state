@@ -1,0 +1,119 @@
+{
+  "students": [
+    {
+      "id": 1,
+      "fullName": "Jane Black",
+      "age": 23,
+      "email": "janea@mail.com",
+      "phone": "0877443321"
+    },
+    {
+      "id": 2,
+      "fullName": "John Black",
+      "age": 29,
+      "email": "john@mail.com",
+      "phone": "0712245123"
+    },
+    {
+      "id": 3,
+      "fullName": "Musa Knows",
+      "age": 20,
+      "email": "musa@mail.com",
+      "phone": "0877443321"
+    }
+  ],
+  "courses": [
+    {
+      "id": 1,
+      "name": "Bachelor of Science",
+      "totalCredits": 120,
+      "studyPeriod": "First Year"
+    },
+    {
+      "id": 2,
+      "name": "Bachelor of Economics",
+      "totalCredits": 80,
+      "studyPeriod": "First Year"
+    }
+  ],
+  "courseSubjects": [
+    {
+      "id": 1,
+      "courseId": 1,
+      "name": "Mathematics 101",
+      "credit": 20
+    },
+    {
+      "id": 2,
+      "courseId": 1,
+      "name": "Physics 101",
+      "credit": 20
+    },
+    {
+      "id": 3,
+      "courseId": 1,
+      "name": "Mechanical Science 101",
+      "credit": 20
+    },
+    {
+      "id": 4,
+      "courseId": 1,
+      "name": "Biochemistry 101",
+      "credit": 20
+    },
+    {
+      "id": 5,
+      "courseId": 1,
+      "name": "Communication 101",
+      "credit": 20
+    },
+    {
+      "id": 6,
+      "courseId": 1,
+      "name": "Economics 101",
+      "credit": 20
+    },
+    
+    {
+      "id": 7,
+      "courseId": 2,
+      "name": "Logical Thinking 101",
+      "credit": 20
+    },
+    {
+      "id": 8,
+      "courseId": 1,
+      "name": "Technical Programming 101",
+      "credit": 20
+    },
+    {
+      "id": 9,
+      "courseId": 1,
+      "name": "Information Systems 101",
+      "credit": 20
+    },
+    {
+      "id": 10,
+      "courseId": 1,
+      "name": "Software Systems 101",
+      "credit": 20
+    }
+  ],
+  "studentCourses":[
+    {
+        "id":1,
+        "studentId":1,
+        "courseId":1
+    },
+    {
+        "id":2,
+        "studentId":2,
+        "courseId":1
+    },
+    {
+        "id":3,
+        "studentId":3,
+        "courseId":12
+    }
+  ]
+}

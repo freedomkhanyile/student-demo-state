@@ -1,1 +1,7 @@
-<p>student-list works!</p>
+<div *ngIf="students$ | async as students">
+    <mat-list>
+        <mat-list-item *ngFor="let item of students">
+            {{item.fullName}} ({{item.age}} years old)
+        </mat-list-item>
+    </mat-list>
+</div>

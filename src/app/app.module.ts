@@ -13,6 +13,7 @@ import {studentReducer, StudentEffects } from './student';
 import { EffectsModule } from '@ngrx/effects';
 import {StoreDevtoolsModule} from '@ngrx/store-devtools';
 import { environment } from '../environments/environment';
+import { SharedModule } from './shared';
 @NgModule({
   declarations: [AppComponent],
   imports: [
@@ -23,7 +24,8 @@ import { environment } from '../environments/environment';
     StoreDevtoolsModule.instrument({
       maxAge:25, // Retains last 25 states
       logOnly: environment.production
-    })
+    }),
+    SharedModule
   ],
   providers: [provideClientHydration(), provideAnimationsAsync()],
   bootstrap: [AppComponent],
