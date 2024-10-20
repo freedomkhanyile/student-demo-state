@@ -6,10 +6,10 @@ import { StudentModel } from '../../_models';
   providedIn: 'root',
 })
 export class StudentService {
-  constructor() {}
+  
 
   listStudents() : Observable<StudentModel[]> {
-    let students: StudentModel[] = [
+    const students: StudentModel[] = [
       {
         id: 1, 
         fullName:'Jane Black',
