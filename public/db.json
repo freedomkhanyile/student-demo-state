@@ -1,13 +1,6 @@
 {
   "students": [
     {
-      "id": "1",
-      "fullName": "Jane Black",
-      "age": 23,
-      "email": "janea@mail.com",
-      "phone": "0877443321"
-    },
-    {
       "fullName": "John Black",
       "age": 29,
       "email": "john.black@mail.com",
