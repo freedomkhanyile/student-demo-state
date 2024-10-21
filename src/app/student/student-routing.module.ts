@@ -1,7 +1,11 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { StudentComponent } from './student.component';
-import { StudentDetailComponent, StudentListComponent } from './components';
+import {
+  StudentDetailComponent,
+  StudentFormComponent,
+  StudentListComponent,
+} from './components';
 
 const routes: Routes = [
   {
@@ -12,6 +16,14 @@ const routes: Routes = [
         path: '',
         component: StudentListComponent,
       },
+      {
+        path:'form',
+        component: StudentFormComponent
+      },
+      {
+        path:'details/:id',
+        component: StudentDetailComponent
+      }
     ],
   },
 ];
@@ -20,6 +32,7 @@ export const declarations = [
   StudentComponent,
   StudentListComponent,
   StudentDetailComponent,
+  StudentFormComponent,
 ];
 
 @NgModule({
