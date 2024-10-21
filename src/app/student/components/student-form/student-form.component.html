@@ -1,3 +1,81 @@
-<p>
-  student-form works!
-</p>
+<div class="form-container">
+  <div class="heading">
+    <h1>{{ isEdit ? "Edit" : "Add new" }} student</h1>
+  </div>
+  <form [formGroup]="studentForm" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <mat-label>Full Name</mat-label>
+      <mat-form-field appearance="outline">
+        <input matInput formControlName="fullName" />
+      </mat-form-field>
+      @if (submitted && f['fullName'].errors) {
+      <div class="invalid-feedback">
+        @if (f['fullName'].errors['required']) {
+        <p>Fullname is required</p>
+        }
+      </div>
+      }
+    </div>
+    <div class="form-group">
+      <mat-label>Email</mat-label>
+      <mat-form-field appearance="outline">
+        <input matInput formControlName="email" />
+      </mat-form-field>
+      @if (submitted && f['email'].errors) {
+      <div class="invalid-feedback">
+        @if (f['email'].errors['required']) {
+        <p>Email is required</p>
+        } @if (f['email'].errors['email']) {
+        <p>Invalid email format provided</p>
+        }
+      </div>
+      }
+    </div>
+    <div class="form-group">
+      <mat-label>Phone</mat-label>
+      <mat-form-field appearance="outline">
+        <input matInput formControlName="phone" />
+      </mat-form-field>
+      @if (submitted && f['phone'].errors) {
+      <div class="invalid-feedback">
+        @if (f['phone'].errors['required']) {
+        <p>Phone number is required</p>
+        } @if (f['phone'].errors['minlength']) {
+        <p>Phone number cannot be less than 10 digits</p>
+        } @if (f['phone'].errors['maxlength']) {
+        <p>Phone number cannot be greater than 13 digits</p>
+        }
+      </div>
+      }
+    </div>
+    <div class="form-group">
+      <mat-label>Age</mat-label>
+      <mat-form-field appearance="outline">
+        <input matInput type="number" formControlName="age" />
+      </mat-form-field>
+      @if (submitted && f['age'].errors) {
+      <div class="invalid-feedback">
+        @if (f['age'].errors['required']) {
+        <p>Age is required</p>
+        }
+      </div>
+      }
+    </div>
+    <div class="form-group form-actions">
+      <button mat-button type="submit" class="btn btn-primary">Save</button>
+      <button mat-button type="button" (click)="onReset()" class="btn btn-warn">
+        Reset
+      </button>
+    </div>
+    <div class="form-group form-actions">
+      <button
+        mat-button
+        type="button"
+        (click)="onCancel()"
+        class="btn btn-clear"
+      >
+        Cancel
+      </button>
+    </div>
+  </form>
+</div>

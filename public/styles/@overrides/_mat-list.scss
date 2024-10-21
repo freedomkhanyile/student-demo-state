@@ -1,0 +1,13 @@
+.mat-mdc-list {
+    padding: 1rem;
+    .mdc-list-item {
+        border: solid 1px var(--grey);
+        margin: 1rem auto;
+        border-radius: 0.65rem;
+        padding: 1rem;
+        background-color: var(--white);
+        .mdc-list-item__primary-text {
+            color: var(--black);
+        }
+    }
+}

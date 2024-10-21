@@ -1,0 +1,17 @@
+button {
+    &.btn-primary {
+        background-color: var(--primary);
+        color: var(--white) !important;
+        font-weight: 400;
+    }
+
+    &.btn-clear {
+        background-color: var(--grey);
+        color: var(--white) !important;
+    }
+
+    &.btn-warn {
+        background-color: var(--softred);
+        color: var(--white) !important;
+    }
+}

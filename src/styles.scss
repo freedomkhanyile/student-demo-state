@@ -1,4 +1,28 @@
 /* You can add global styles to this file, and also import other style files */
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+@import url("../public/styles/_index.scss");
+
+html,
+body {
+    height: 100%;
+}
+body {
+    margin: 0;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+    background-color: var(--clouds);
+}
+
+:root {
+    --primary: #8e44ad;
+    --red: #e62e38;
+    --white: #ffffff;
+    --grey: #bdc3c7;
+    --softred: #f28482;
+    --clouds: #ecf0f1;
+    --darkblue: #10455b;
+    --black:#2c3e50;
+    --redlight:#f2848236;
+    --box-shadow: 0px 0px 11px 0px rgba(0, 0, 0, 0.25);
+
+}
+
