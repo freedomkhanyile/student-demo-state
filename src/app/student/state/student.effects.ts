@@ -6,6 +6,15 @@ import {
   loadStudents,
   loadStudentsSuccess,
   loadStudentsFailure,
+  addStudent,
+  addStudentSuccess,
+  addStudentFailure,
+  updateStudent,
+  updateStudentSuccess,
+  updateStudentFailure,
+  deleteStudent,
+  deleteStudentSuccess,
+  deleteStudentFailure,
 } from './student.actions';
 import { catchError, map, mergeMap } from 'rxjs/operators';
 import { of } from 'rxjs';
@@ -24,6 +33,42 @@ export class StudentEffects {
         this.studentService.listStudents().pipe(
           map((students) => loadStudentsSuccess({ students })),
           catchError((error) => of(loadStudentsFailure({ error })))
+        )
+      )
+    )
+  );
+
+  addStudent$ = createEffect(() =>
+    this.actions$.pipe(
+      ofType(addStudent),
+      mergeMap((action) =>
+        this.studentService.addStudent(action.student).pipe(
+          map((student) => addStudentSuccess({ student })),
+          catchError((error) => of(addStudentFailure({ error })))
+        )
+      )
+    )
+  );
+
+  updateStudent$ = createEffect(() =>
+    this.actions$.pipe(
+      ofType(updateStudent),
+      mergeMap((action) =>
+        this.studentService.updateStudent(action.student).pipe(
+          map((student) => updateStudentSuccess({ student })),
+          catchError((error) => of(updateStudentFailure({ error })))
+        )
+      )
+    )
+  );
+
+  deleteStudent$ = createEffect(() =>
+    this.actions$.pipe(
+      ofType(deleteStudent),
+      mergeMap((action) =>
+        this.studentService.deleteStudent(action.studentId).pipe(
+          map(() => deleteStudentSuccess({ studentId: action.studentId })),
+          catchError((error) => of(deleteStudentFailure({ error })))
         )
       )
     )
