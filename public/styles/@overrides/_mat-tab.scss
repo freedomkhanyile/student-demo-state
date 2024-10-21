@@ -1,0 +1,18 @@
+mat-tab-group {
+    background-color: var(--white);
+    mat-tab-header {
+        color: var(--black);
+        .mat-mdc-tab.mdc-tab--active .mdc-tab__text-label {
+            color: var(--black);
+        }
+        .mat-mdc-tab.mdc-tab--active:focus .mdc-tab__text-label {
+            color: var(--black);
+        }
+        .mat-mdc-tab.mdc-tab--active:hover .mdc-tab__text-label {
+            color: var(--black);
+        }
+        .mat-mdc-tab .mdc-tab__text-label {
+            color: var(--black);
+        }
+    }
+}

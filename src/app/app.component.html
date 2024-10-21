@@ -1,3 +1,7 @@
-<div class="main-container">
-    <router-outlet></router-outlet>
+<mat-tab-group animationDuration="0ms"  (selectedIndexChange)="index=$event;navigate($event)">
+  <mat-tab label="Students"></mat-tab>
+  <mat-tab label="Courses"></mat-tab>  
+</mat-tab-group>
+<div class="main-container"  [@flyInOut]="getAnimation(0,indexOld,index)" (@flyInOut.done)="indexOld=index">
+  <router-outlet></router-outlet>
 </div>
