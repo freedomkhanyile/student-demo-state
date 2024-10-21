@@ -1,21 +1,29 @@
 <div *ngIf="students$ | async as students">
   <div class="header">
-    <h1>List of students [{{ students.length }}]</h1> 
-    <button mat-button class="btn-primary" (click)="addEditButtonClick('')">Add Student</button>
-  </div>   
+    <h1>List of students [{{ students.length }}]</h1>
+    <button mat-button class="btn-primary" (click)="addEditButtonClick('')">
+      Add Student
+    </button>
+  </div>
   <mat-card appearance="outlined" *ngFor="let item of students">
     <mat-card-header>
       <mat-card-title>{{ item.fullName }}</mat-card-title>
       <mat-card-subtitle>({{ item.age }} years old)</mat-card-subtitle>
     </mat-card-header>
     <mat-card-content>
-        <p>{{item.email}}</p>
-        <p>{{item.phone}}</p>
-      </mat-card-content>
+      <p>{{ item.email }}</p>
+      <p>{{ item.phone }}</p>
+    </mat-card-content>
     <mat-card-actions align="end">
-        <button mat-button color="info" (click)="viewButtonClick(item.id)">View</button>     
-        <button mat-button color="primary" (click)="addEditButtonClick(item.id)">Edit</button>     
-        <button mat-button color="warn" (click)="deleteStudentItem(item.id)">Delete</button>     
+      <button mat-button color="info" (click)="viewButtonClick(item.id)">
+        View
+      </button>
+      <button mat-button color="primary" (click)="addEditButtonClick(item.id)">
+        Edit
+      </button>
+      <button mat-button color="warn" (click)="deleteStudentItem(item.id)">
+        Delete
+      </button>
     </mat-card-actions>
   </mat-card>
 </div>
