@@ -17,7 +17,7 @@ export class StudentService {
   }
 
   getStudentById(id: number): Observable<StudentModel> {
-    return this.http.get<StudentModel>(`${this.apiUrl}?id=${id}`);
+    return this.http.get<StudentModel>(`${this.apiUrl}/${id}`);
   }
 
   addStudent(student: StudentModel): Observable<StudentModel> {

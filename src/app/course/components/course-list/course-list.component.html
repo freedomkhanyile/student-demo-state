@@ -1,0 +1,7 @@
+<div *ngIf="courses$ | async as courses">
+  <mat-list>
+    <mat-list-item *ngFor="let item of courses">
+      {{item.name}} ({{item.totalCredits}} credits)
+    </mat-list-item>
+  </mat-list>
+</div>

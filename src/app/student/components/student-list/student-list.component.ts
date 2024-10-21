@@ -15,6 +15,6 @@ export class StudentListComponent implements OnInit {
     this.students$ = store.select((state) => state.students.students);
   }
   ngOnInit(): void {
-    this.store.dispatch(loadStudents())
+    this.store.dispatch(loadStudents());
   }
 }
