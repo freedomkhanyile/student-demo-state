@@ -8,7 +8,14 @@ import {
 import { Store } from '@ngrx/store';
 import { AppState } from '../../../app-state';
 import { ActivatedRoute, Router } from '@angular/router';
-import { addStudent, loadStudent, selectSelectedStudent, updateStudent } from '../../state';
+import {
+  addStudent,
+  loadStudent,
+  loadStudents,
+  selectAllStudents,
+  selectSelectedStudent,
+  updateStudent,
+} from '../../state';
 import { StudentModel } from '../../../_models';
 
 @Component({
@@ -46,22 +53,22 @@ export class StudentFormComponent implements OnInit {
     this.route.params.subscribe((params) => {
       if (params['id']) {
         this.isEdit = true;
-        this.studentId = +params['id'];    
+        this.studentId = +params['id'];
         this.mapStudentForm(this.studentId);
       }
     });
   }
 
-  mapStudentForm(studentId: number) {   
-    this.store.dispatch(loadStudent({studentId}));
-    this.store.select(selectSelectedStudent).subscribe((student) => {   
+  mapStudentForm(studentId: number) {
+    this.store.dispatch(loadStudent({ studentId }));
+    this.store.select(selectSelectedStudent).subscribe((student) => {
       if (student) {
-        this.studentForm?.patchValue(student);        
+        this.studentForm?.patchValue(student);
       }
     });
   }
 
-  get f(): { [key: string]: AbstractControl }  {
+  get f(): { [key: string]: AbstractControl } {
     return this.studentForm?.controls;
   }
 
@@ -79,7 +86,15 @@ export class StudentFormComponent implements OnInit {
       );
       this.router.navigate(['/students']);
     } else {
-      this.store.dispatch(addStudent({ student }));
+      this.store.select(selectAllStudents).subscribe((data) => {
+        if (data && data.length > 0) {
+          student.id = (data.length + 1).toString(); // implement incremental from FE;
+        } else {
+          student.id = 1;
+        }
+        this.store.dispatch(addStudent({ student }));
+      });
+
       this.router.navigate(['/students']);
     }
   }

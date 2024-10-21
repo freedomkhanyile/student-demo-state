@@ -20,6 +20,27 @@
       "age": 19,
       "email": "sbusiso@mail.com",
       "phone": "0712245123"
+    },
+    {
+      "id": "4",
+      "fullName": "Dany Davito",
+      "age": 17,
+      "email": "danny@mail.com",
+      "phone": "08422344125"
+    },
+    {
+      "id": "5",
+      "fullName": "Jane Doe",
+      "age": 23,
+      "email": "jane.doe@mail.com",
+      "phone": "0842234412"
+    },
+    {
+      "fullName": "Simon Best",
+      "age": 17,
+      "email": "simone.best@mail.com",
+      "phone": "0842234412",
+      "id": "6"
     }
   ],
   "courses": [
