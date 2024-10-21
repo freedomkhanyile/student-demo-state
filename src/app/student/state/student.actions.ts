@@ -5,12 +5,28 @@ import { StudentModel } from '../../_models';
 export const loadStudents = createAction('[Student List] Load Students');
 
 export const loadStudentsSuccess = createAction(
-  '[Student List] Load Student Success',
+  '[Student List] Load Students Success',
   props<{ students: StudentModel[] }>()
 );
 
 export const loadStudentsFailure = createAction(
   '[Student List] Load Students Failure',
+  props<{ error: string }>()
+);
+
+// Load a single student
+export const loadStudent = createAction(
+  '[Load Student] Single Student',
+  props<{ studentId: number }>()
+);
+
+export const loadStudentSuccess = createAction(
+  '[Load student] Single Student Success',
+  props<{ student: StudentModel }>()
+);
+
+export const loadStudentFailure = createAction(
+  '[Load Student] Single Student Failure',
   props<{ error: string }>()
 );
 

@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { Observable } from 'rxjs';
-import { StudentModel } from '../../../_models';
 import { Store } from '@ngrx/store';
-import { loadStudents, StudentState } from '../../state';
+import { deleteStudent, loadStudents, selectAllStudents } from '../../state';
+import { AppState } from '../../../app-state';
 
 @Component({
   selector: 'app-student-list',
@@ -10,11 +9,14 @@ import { loadStudents, StudentState } from '../../state';
   styleUrl: './student-list.component.scss',
 })
 export class StudentListComponent implements OnInit {
-  students$: Observable<StudentModel[]>;
-  constructor(private store: Store<{ students: StudentState }>) {
-    this.students$ = store.select((state) => state.students.students);
-  }
+  students$ = this.store.select(selectAllStudents);
+  constructor(private store: Store<AppState>) {}
+
   ngOnInit(): void {
     this.store.dispatch(loadStudents());
+  }
+
+  delete(id: number): void {
+    this.store.dispatch(deleteStudent({ studentId: id }));
   }
 }
