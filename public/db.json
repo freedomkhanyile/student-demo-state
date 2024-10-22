@@ -1,18 +1,11 @@
 {
   "students": [
     {
-      "fullName": "John Black",
-      "age": 29,
-      "email": "john.black@mail.com",
-      "phone": "0712245123",
-      "id": "2"
-    },
-    {
-      "id": "3",
       "fullName": "Sbusiso Knows",
-      "age": 19,
+      "age": 26,
       "email": "sbusiso@mail.com",
-      "phone": "0712245123"
+      "phone": "0712245123",
+      "id": "3"
     },
     {
       "id": "4",
@@ -29,11 +22,25 @@
       "phone": "0842234412"
     },
     {
-      "fullName": "Simon Best",
-      "age": 17,
-      "email": "simone.best@mail.com",
-      "phone": "0842234412",
-      "id": "6"
+      "id": "9f71",
+      "fullName": "Backer Solomons",
+      "age": 18,
+      "email": "backer.solomons@mail.com",
+      "phone": "08343343323"
+    },
+    {
+      "id": "a8cd",
+      "fullName": "Missy Khumalo",
+      "age": 19,
+      "email": "missy.khumalo@mail.com",
+      "phone": "08433432232"
+    },
+    {
+      "id": "1fed",
+      "fullName": "Lonosi Ngubane",
+      "age": 845554332,
+      "email": "lonisi.ngubane@mail.com",
+      "phone": "0843323321"
     }
   ],
   "courses": [

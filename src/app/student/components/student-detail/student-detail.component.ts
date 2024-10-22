@@ -19,7 +19,7 @@ export class StudentDetailComponent implements OnInit {
     private router: Router
   ) {}
   ngOnInit(): void {
-    const studentId = +this.route.snapshot.paramMap.get('id')!;
+    const studentId = this.route.snapshot.paramMap.get('id')!;
     this.store.dispatch(loadStudent({ studentId }));
   }
 
@@ -27,7 +27,7 @@ export class StudentDetailComponent implements OnInit {
     this.router.navigate(['/students']);
   }
 
-  deleteStudentItem(id: number): void {
+  deleteStudentItem(id: string): void {
     this.store.dispatch(deleteStudent({ studentId: id }));
     this.router.navigate(['/students']);
   }

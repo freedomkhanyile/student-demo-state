@@ -26,7 +26,7 @@ import { StudentModel } from '../../../_models';
 export class StudentFormComponent implements OnInit {
   studentForm: FormGroup;
   isEdit = false;
-  studentId: number = 0;
+  studentId: string = '';
   submitted = false;
   constructor(
     private fb: FormBuilder,
@@ -53,13 +53,13 @@ export class StudentFormComponent implements OnInit {
     this.route.params.subscribe((params) => {
       if (params['id']) {
         this.isEdit = true;
-        this.studentId = +params['id'];
+        this.studentId = params['id'];
         this.mapStudentForm(this.studentId);
       }
     });
   }
 
-  mapStudentForm(studentId: number) {
+  mapStudentForm(studentId: string) {
     this.store.dispatch(loadStudent({ studentId }));
     this.store.select(selectSelectedStudent).subscribe((student) => {
       if (student) {
@@ -77,24 +77,14 @@ export class StudentFormComponent implements OnInit {
     if (this.studentForm.invalid) {
       return;
     }
-
     const student: StudentModel = this.studentForm?.value;
-
     if (this.isEdit && this.studentId) {
       this.store.dispatch(
         updateStudent({ student: { ...student, id: this.studentId } })
       );
       this.router.navigate(['/students']);
     } else {
-      this.store.select(selectAllStudents).subscribe((data) => {
-        if (data && data.length > 0) {
-          student.id = (data.length + 1).toString(); // implement incremental from FE;
-        } else {
-          student.id = 1;
-        }
-        this.store.dispatch(addStudent({ student }));
-      });
-
+      this.store.dispatch(addStudent({ student }));
       this.router.navigate(['/students']);
     }
   }
@@ -102,7 +92,7 @@ export class StudentFormComponent implements OnInit {
   onReset(): void {
     this.submitted = false;
     this.studentForm.reset();
-    this.mapStudentForm(this.studentId as number);
+    this.mapStudentForm(this.studentId);
   }
   onCancel() {
     this.router.navigate(['/students']);

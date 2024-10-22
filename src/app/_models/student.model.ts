@@ -1,5 +1,5 @@
 export interface StudentModel {
-    id: number | string;
+    id: string;
     fullName: string;
     age: number;
     email:string;

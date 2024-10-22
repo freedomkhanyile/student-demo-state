@@ -17,7 +17,7 @@ export const loadStudentsFailure = createAction(
 // Load a single student
 export const loadStudent = createAction(
   '[Load Student] Single Student',
-  props<{ studentId: number }>()
+  props<{ studentId: string }>()
 );
 
 export const loadStudentSuccess = createAction(
@@ -65,12 +65,12 @@ export const updateStudentFailure = createAction(
 // Delete Student
 export const deleteStudent = createAction(
   '[Student List] Delete Student',
-  props<{ studentId: number }>()
+  props<{ studentId: string }>()
 );
 
 export const deleteStudentSuccess = createAction(
   '[Student List] Delete Student Success',
-  props<{ studentId: number }>()
+  props<{ studentId: string }>()
 );
 
 export const deleteStudentFailure = createAction(

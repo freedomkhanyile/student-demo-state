@@ -17,14 +17,14 @@ export class StudentListComponent implements OnInit {
     this.store.dispatch(loadStudents());
   }
 
-  addEditButtonClick(id: number | ''){
+  addEditButtonClick(id: string | ''){
     this.router.navigate(['students/form', id]);
   }
 
-  viewButtonClick(id:number){
+  viewButtonClick(id:string){
     this.router.navigate(['students/details',id]);
   }
-  deleteStudentItem(id: number): void {
+  deleteStudentItem(id: string): void {
     this.store.dispatch(deleteStudent({ studentId: id }));
   }
 }
