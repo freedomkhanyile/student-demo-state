@@ -1,7 +1,6 @@
 import { createSelector, createFeatureSelector } from '@ngrx/store';
 
 import { StudentState } from './student.reducer';
-import { StudentModel } from '../../_models';
 
 export const selectStudentState =
   createFeatureSelector<StudentState>('students');

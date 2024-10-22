@@ -41,6 +41,13 @@
       "age": 845554332,
       "email": "lonisi.ngubane@mail.com",
       "phone": "0843323321"
+    },
+    {
+      "fullName": "Mediline",
+      "age": 18,
+      "email": "med@mail.com",
+      "phone": "08422234441",
+      "id": "1f1f"
     }
   ],
   "courses": [
